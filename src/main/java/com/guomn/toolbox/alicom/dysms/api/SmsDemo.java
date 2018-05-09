@@ -43,6 +43,8 @@ public class SmsDemo {
 
     static String accessKeyId;
     static String accessKeySecret;
+    static String templateCode;
+    static String signName;
     @Value("${sms.accessKeyId}")
     public void setAccessKeyId(String input){
         accessKeyId = input;
@@ -50,6 +52,14 @@ public class SmsDemo {
     @Value("${sms.accessKeySecret}")
     public void setAccessKeySecret(String input){
         accessKeySecret = input;
+    }
+    @Value("${sms.templateCode}")
+    public void setTemplateCode(String input){
+        templateCode = input;
+    }
+    @Value("${sms.signName}")
+    public void setSignName(String input){
+        signName = input;
     }
 
     public static SendSmsResponse sendSms(String toMobile, String message ) throws ClientException {
@@ -68,11 +78,11 @@ public class SmsDemo {
         //必填:待发送手机号
         request.setPhoneNumbers(toMobile);
         //必填:短信签名-可在短信控制台中找到
-        request.setSignName("郭梦男");
+        request.setSignName(signName);
         //必填:短信模板-可在短信控制台中找到
-        request.setTemplateCode("SMS_133001162");
+        request.setTemplateCode(templateCode);
         //可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
-        request.setTemplateParam("{\"name\":\"" + message + "\"}");
+        request.setTemplateParam("{\"code\":\"" + message + "\"}");
 
         //选填-上行短信扩展码(无特殊需求用户请忽略此字段)
         //request.setSmsUpExtendCode("90997");

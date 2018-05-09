@@ -28,7 +28,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 
         // 参数校验
         if (StringUtils.isEmpty(token) || StringUtils.isEmpty(userID)) {
-            log.error("auth failure：{}","token is empty!");
+            log.info("auth failure：{}","token is empty!");
             return false;
          }
 
