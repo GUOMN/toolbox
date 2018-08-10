@@ -22,6 +22,7 @@ public class AuthorizationController {
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
 
+    // token过期时间15天
     public static final Long TOKEN_EXPIRE = 15 * 24 * 60 * 60L;
 
     @PostMapping("/getContactToken")

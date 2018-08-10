@@ -1,4 +1,4 @@
-package com.guomn.toolbox.controller;
+package com.guomn.toolbox.controller.guester;
 
 import com.guomn.toolbox.mapper.SmsLogMapper;
 import com.guomn.toolbox.pojo.SmsLog;
