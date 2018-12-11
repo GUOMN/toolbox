@@ -46,7 +46,7 @@ public class ACMProperties {
 		// Initialize configuration service and the console will retrieve the following parameters through the sample code. Input parameters include endpoint, namespace, accessKey, and secretKey(The secrectKey of ACM. Do not use the secrectKey of your Alibaba acount.).
 		Properties properties = new Properties();
 		properties.put("endpoint", "acm.aliyun.com");
-		properties.put("namespace", "54c863d0-fbd3-47ba-9d4e-47b80afd1efb");
+		properties.put("namespace", "f471b4fb-f02c-472c-af17-064b21c9c660");
 		// Access ACM with instance RAM role: https://help.aliyun.com/document_detail/72013.html
 		// properties.put("ramRoleName", "$ramRoleName");
 		properties.put("accessKey", "5c8cd07478cd4a499acd7b7acca51bee");
@@ -63,7 +63,7 @@ public class ACMProperties {
 
 		// Get configuration proactively
 		try {
-			config = ConfigService.getConfig("toolbox", "DEFAULT_GROUP", 6000);
+			config = ConfigService.getConfig("ToolBox", "DEFAULT_GROUP", 6000);
 			save();
 			// YAML转换有问题，自己实现
 //			acmProperties = ConfigService.getConfig2Properties("toolbox", "DEFAULT_GROUP", 6000);

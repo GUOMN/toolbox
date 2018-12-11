@@ -1,11 +1,13 @@
 package com.guomn.toolbox.utils;
 
+import com.alibaba.fastjson.JSON;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Base64EncoderHelper {
 
@@ -27,16 +29,14 @@ public class Base64EncoderHelper {
 
     public static void  main(String[] args){
 
-        List<String> input = new ArrayList<>();
-        input.add("aaaa");
+       String ss = "PGh0bWw+DQo8aGVhZD48dGl0bGU+NDAwIEJhZCBSZXF1ZXN0PC90aXRsZT48L2hlYWQ+DQo8Ym9keSBiZ2NvbG9yPSJ3aGl0ZSI+DQo8Y2VudGVyPjxoMT40MDAgQmFkIFJlcXVlc3Q8L2gxPjwvY2VudGVyPg0KPGhyPjxjZW50ZXI+bmdpbngvMS4xMi4yPC9jZW50ZXI+DQo8L2JvZHk+DQo8L2h0bWw+DQo=";
 
-        for (String str : input) {
-            System.out.print("加密前：" + str);
-            str = AESEncode(str);
-            System.out.print("加密后：" + str);
-            str = AESDencode(str);
-            System.out.print("解密后：" + str);
-        }
+
+        ss = AESDencode(ss);
+        System.out.print("解密后：" + ss);
+
+        JSON.parseObject(ss, Map.class);
+
     }
 
 }

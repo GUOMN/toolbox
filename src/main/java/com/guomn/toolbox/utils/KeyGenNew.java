@@ -100,8 +100,8 @@ public class KeyGenNew {
     }
 
     public static void main(String[] args) {
-        String name="WJH";//设置用户名
-        byte version = 14;
+        String name="MAO";//设置用户名
+        byte version = 18;
         System.out.println(key(name, version));
     }
 }
