@@ -12,9 +12,18 @@ public class AsyncDemo {
 //        CompletableFuture.runAsync(() -> System.out.println("helloworld"))
 //        .thenAccept(System.out::println);
 
-        CompletableFuture.supplyAsync(() -> "helloworld")
-                .thenAccept(System.out::println);
+        CompletableFuture.supplyAsync(() -> {
+            return function1();
+        }).thenAccept((s) -> function2(s));
 
 
+    }
+
+    private static void function2(String s) {
+        System.out.println(s);
+    }
+
+    private static String function1() {
+        return "hello world";
     }
 }
